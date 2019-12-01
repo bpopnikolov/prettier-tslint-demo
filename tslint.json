@@ -1,12 +1,14 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended", "tslint-etc", "tslint-config-prettier", "tslint-plugin-prettier"],
   "rules": {
+    "prettier": true,
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
       "severity": "warning"
     },
     "component-class-suffix": true,
+    "no-unused-declaration": {"severity": "error"},
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
     "directive-selector": [
@@ -66,7 +68,13 @@
       "as-needed"
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ],
     "quotemark": [
       true,
       "single"
